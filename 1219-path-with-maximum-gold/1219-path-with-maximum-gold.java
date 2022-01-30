@@ -24,18 +24,16 @@ class Solution {
     
     public void findMaxPath(int[][] grid,int row, int col, boolean[][] visited, int pathSum){
         
-            if(pathSum>maxPathSum){
-                maxPathSum=pathSum;
-            }
-  
-           visited[row][col]=true;
+            maxPathSum=Math.max(pathSum,maxPathSum);
+        
+            visited[row][col]=true;
             if(row+1<grid.length && visited[row+1][col]==false && grid[row+1][col]!=0)
                 findMaxPath(grid,row+1,col,visited, pathSum + grid[row+1][col]);
-             if(row-1>=0 && visited[row-1][col]==false && grid[row-1][col]!=0)
+            if(row-1>=0 && visited[row-1][col]==false && grid[row-1][col]!=0)
                 findMaxPath(grid,row-1,col,visited, pathSum + grid[row-1][col]);
-             if(col+1<grid[0].length && visited[row][col+1]==false && grid[row][col+1]!=0)
+            if(col+1<grid[0].length && visited[row][col+1]==false && grid[row][col+1]!=0)
                 findMaxPath(grid,row,col+1,visited, pathSum + grid[row][col+1]);
-             if(col-1>=0 && visited[row][col-1]==false && grid[row][col-1]!=0)
+            if(col-1>=0 && visited[row][col-1]==false && grid[row][col-1]!=0)
                 findMaxPath(grid,row,col-1,visited, pathSum + grid[row][col-1]);
             visited[row][col]=false; 
           
