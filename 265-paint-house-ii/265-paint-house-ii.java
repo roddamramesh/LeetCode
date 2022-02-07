@@ -10,8 +10,7 @@ class Solution {
                        minSum = Math.min(costs[row-1][temp],minSum);
                     }
                 }
-                costs[row][col] =  costs[row][col]+ minSum  ;
-                minSum = Integer.MAX_VALUE;
+                costs[row][col] =  costs[row][col]+ minSum;
             }
         }
         
