@@ -9,7 +9,7 @@ class Solution {
             boolean breakloop = false;
             char ch = strs[0].charAt(i);
             for(String str:strs){
-                if(i>str.length()-1 ||!(str.charAt(i)==ch)){
+                if(i==str.length() ||!(str.charAt(i)==ch)){
                    breakloop=true; 
                     break;
                 }
